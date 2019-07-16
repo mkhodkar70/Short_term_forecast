@@ -6,8 +6,8 @@ close all
 
 F = 8;  %% forcing
 
-r = 150;           %% reduced order of the main data (u)
-q = 5;             %% embedded delay for Hankel representation
+r = 700;           %% reduced order of the main data (u)
+q = 20;            %% embedded delay for Hankel representation
 J = 2;             %% # of neighboring points
 p = (J+1)*r;       %% reduced order of the control (u^2)
 
@@ -122,7 +122,6 @@ for(i = 1:length(E))
     E(i) = norm(X_pred(:, i) - X_test(:, i))/norm(X_test(:, i));
 end
 
-%i_blow = m_test - q;
 i_blow = floor(m_test/1.5)-q;
 for(i = 1:length(E))
     if(E(i) > 0.3)
@@ -223,7 +222,6 @@ caxis([-12 12]);
 pbaspect([4, 1, 1]);
 xlim([0 16]);
 ylim([1 n]);
-% set(gca, 'YTick', [0:4:16])
 xlabel('$\Lambda_{max} t$', 'interpreter', 'latex');
 ylabel('$j$', 'interpreter', 'latex');
 title('$\mathrm{Prediction}$', 'interpreter', 'latex', 'Fontsize', 14);
@@ -242,7 +240,6 @@ caxis([-20 20]);
 pbaspect([4, 1, 1]);
 xlim([0 16]);
 ylim([1 n]);
-% set(gca, 'YTick', [0:4:16])
 xlabel('$\Lambda_{max} t$', 'interpreter', 'latex');
 ylabel('$j$', 'interpreter', 'latex');
 title('$\mathrm{Difference}$', 'interpreter', 'latex', 'Fontsize', 14);
