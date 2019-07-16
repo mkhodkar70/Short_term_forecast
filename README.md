@@ -10,3 +10,8 @@ nonlinear_observables.m: A subroutine making the forcing vectors of the method
 HDMDC_Execution.m: A subroutine finding the unknown matrices A and B present in the method
 
 b2r.m: a subroutine generating blue-to-red color map
+
+train: the directory including training sets of Lorenz-96 with different values of F
+
+test: the directory including testing sets of Lorenz-96 with different values of F
+
